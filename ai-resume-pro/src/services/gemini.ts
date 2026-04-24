@@ -1,7 +1,7 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { ResumeData, initialResumeData } from "../types";
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
 const modelName = "gemini-3-flash-preview";
 
 export async function parseResumeMultimodal(base64Data: string, mimeType: string): Promise<ResumeData | null> {
